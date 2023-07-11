@@ -1,0 +1,26 @@
+{
+  "name": "teams-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshay-tricon/teams-notifier.git"
+  },
+  "keywords": [
+    "teams",
+    "notification"
+  ],
+  "author": "Akshay Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akshay-tricon/teams-notifier/issues"
+  },
+  "homepage": "https://github.com/Akshay-tricon/teams-notifier#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.1"
+  }
+}
