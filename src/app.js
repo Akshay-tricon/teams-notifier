@@ -6,10 +6,10 @@ const port = 3000;
 app.get('/file/local/:filename', async (req, res) => {
   // const fileStream = createReadStream(resolve(__dirname, '../test', req.params.filename));
   const file = await getS3File(req.params.filename);
-  res.setHeader('Content-Type', 'application/octet-stream');
-  if(file.contentLength) res.setHeader('Content-Length', file.contentLength);
-  if(file.contentEncoding) res.setHeader('Content-Encoding', file.contentEncoding);
-  if(file.body) {
+  if(file && file.body) {
+    res.setHeader('Content-Type', 'application/octet-stream');
+    if(file.contentLength) res.setHeader('Content-Length', file.contentLength);
+    if(file.contentEncoding) res.setHeader('Content-Encoding', file.contentEncoding);
     file.body.pipe(res);
     file.body.on('error', (err) => {
       if(err['code']==='EISDIR' || err['code']==='ENOENT') {

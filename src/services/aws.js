@@ -1,8 +1,4 @@
-// const aws = require('aws-sdk');
 const {S3Client, GetObjectCommand} = require('@aws-sdk/client-s3');
-const { Blob } = require('buffer');
-const { createReadStream } = require('fs');
-const { Readable } = require('stream');
 
 const config = {
     region: 'us-east-1',
@@ -17,9 +13,6 @@ const s3Client = new S3Client({ region: config.region, credentials: {
     secretAccessKey: config.secretAccessKey,
     sessionToken: config.sessionToken
 }});
-
-// aws.config.update({accessKeyId: config.accessKeyId, secretAccessKey: config.secretAccessKey, region: config.region});
-// const S3O = new aws.S3();
 
 async function getS3File(filename) {
     try {
